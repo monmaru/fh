@@ -23,18 +23,12 @@ func main() {
 	}
 
 	f := os.Args[1]
-	fmt.Print("MD5       : ")
-	fmt.Println(compute(f, md5.New()))
-	fmt.Print("SHA1      : ")
-	fmt.Println(compute(f, sha1.New()))
-	fmt.Print("SHA256    : ")
-	fmt.Println(compute(f, sha256.New()))
-	fmt.Print("SHA-384   : ")
-	fmt.Println(compute(f, sha512.New384()))
-	fmt.Print("SHA-512   : ")
-	fmt.Println(compute(f, sha512.New()))
-	fmt.Print("RIPEMD160 : ")
-	fmt.Println(compute(f, ripemd160.New()))
+	fmt.Println("MD5       : ", compute(f, md5.New()))
+	fmt.Println("SHA1      : ", compute(f, sha1.New()))
+	fmt.Println("SHA256    : ", compute(f, sha256.New()))
+	fmt.Println("SHA-384   : ", compute(f, sha512.New384()))
+	fmt.Println("SHA-512   : ", compute(f, sha512.New()))
+	fmt.Println("RIPEMD160 : ", compute(f, ripemd160.New()))
 }
 
 func compute(filePath string, hash hash.Hash) string {
